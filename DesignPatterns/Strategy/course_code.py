@@ -22,8 +22,7 @@ class Payment:
         self.purchase = purchase
 
     def get_gateway(self):
-        return self.gateway[0] if self.purchase.total_price() < 100 else \
-            self.gateway[1]
+        return self.gateway[0] if self.purchase.total_price() < 100 else self.gateway[1]
 
     def pay(self):
         """if payment amount is less than 100,use G1 gateway otherwise use G2"""
