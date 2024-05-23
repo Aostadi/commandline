@@ -22,5 +22,6 @@ print("Data stored in Redis")
 for item in data:
     post_id = item['id']
     post_data = client.hgetall(f"post:{post_id}")
-    post_data = {k.decode('utf-8'): v.decode('utf-8') for k, v in post_data.items()}
+    # post_data = {k.decode('utf-8'): v.decode('utf-8') for k, v in post_data.items()}
+    # اگر از decode_responses=True استفاده کرده‌اید، نیازی به decode کردن مجدد نیست
     print(f"Post ID: {post_id}, Data: {post_data}")
